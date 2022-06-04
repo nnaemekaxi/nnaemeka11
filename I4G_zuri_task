@@ -1,0 +1,57 @@
+import random
+
+# R = "rock"
+# P = "paper"
+# S = "scissors"
+options = ["R", "P", "S"]
+
+CPU = random.choice(options)
+
+x = 0
+y = 0
+prompt = input("Ready to play? Yes or No?: ").lower()
+player = input("Please enter your name: ").upper()
+while prompt != "no":
+    Player = input("R, P or S?: ").upper()
+    if Player not in options:
+        print("Enter a valid option")
+
+    if Player == CPU:
+        print("Computer: ", CPU)
+        print("Player: ", Player)
+        print("Tie!")
+    elif Player == "R":
+        if CPU == "P":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print("COM wins!")
+        if CPU == "S":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print(player + " wins!")
+    elif Player == "P":
+        if CPU == "S":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print("COM wins!")
+        if CPU == "R":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print(player + " wins!")
+    elif Player == "S":
+        if CPU == "R":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print("COM wins!")
+        if CPU == "P":
+            print("Computer: ", CPU)
+            print("Player: ", Player)
+            print(player + " wins!")
+
+    replay = input("Do you still wish to play? (yes/no): ").lower()
+
+    if replay != "yes":
+        break
+    x = x + 1
+print("Bye!")
+
